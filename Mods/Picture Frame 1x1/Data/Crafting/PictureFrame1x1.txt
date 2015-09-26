@@ -1,0 +1,25 @@
+Decor Recipes
+{
+	Picture Frame 1x1 Recipe
+	{
+		Script = "Scripts/Recipes/DefaultRecipe.lua"
+
+		LuaData
+		{
+			craftTime = 5.0
+			priority = 2.0
+			
+			Components
+			{
+				Sticks
+				{
+					"Forked Stick" = 5
+				}
+			}
+			Results
+			{
+				"Picture Frame 1x1" = 1
+			}
+		}
+	}
+}

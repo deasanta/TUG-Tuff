@@ -1,0 +1,162 @@
+
+GameObjects
+{
+	Equipable
+	{
+		Beach Bucket
+		{
+			Tag = "Tools"
+			
+			Transform
+			{
+			}
+			Script
+			{
+				file = "Scripts/Objects/PlaceableObject.lua"
+				class = "Equipable"
+				
+				arguments
+				{
+					incorrectTierCap = 2
+					encumbrance = 0.6
+
+					swingtransition = "Hswing"
+
+					#Break/Creak info
+					CriticalHitPoints = 5.0
+					CreakingSound = "ItemCreak"
+					BreakSound = "ItemBreak"
+					
+					dataMetricCategory = "Tool"
+					UBPcraft = 5
+					LBPcraft = 4
+					XPcraft = 9	
+										
+					Affects
+					{
+						"Wood" = 2
+						"Vegetation" = 2
+						"Edible" = 2
+					}
+					ModificationInput
+					{
+						"modificationType" = "Remove"
+						"dimensions" = <1.0,1.0,1.0>
+						"radius" = 1.0
+						"brushType" = "Sphere"
+					}				
+				}
+			}
+			StaticGraphics
+			{
+				model = "Models/PlaceableObjects/Testing/beach_bucket.obj"
+				dontCastShadows = 1.0
+				
+				Diffuse
+				{
+					0 = "Models/PlaceableObjects/Testing/beach_bucket_diff.tga"
+				}
+				Normal
+				{
+					0 = "Models/PlaceableObjects/Testing/beach_bucket_norm.tga"
+				}
+			}
+			#RigidBody
+			#{
+			#	activePhysics = 0
+			#	mass = 50.0
+			#	friction = 100.0
+			#}
+			Physics
+			{
+				Colliders
+				{
+					Mesh
+					{
+						mass = 50.0
+						material = "WOOD"
+					}
+					#Cylinder
+					#{
+					#	mass = 50.0
+					#	height = 1.6
+					#	radius = 0.8
+					#	center = <0.0, 0.68, 0>
+					#}
+				}
+
+				Rigidbody
+				{
+					keyframed = 1
+				}
+			}
+			
+			Equipable
+			{
+				name = "Beach Bucket"
+				icon = "beachbucket"
+				minScale = 1.0
+				maxScale = 1.0
+
+				category = "Tool"
+				tier = 2
+				resource = 1
+				durability = 240.0
+				damageToCharacters = 1
+				damageToObjects = 1
+				maxStackCount = 5.0
+
+				placementSound = "WoodPlace"
+				miningEmitter = "Strike Rock Grey Emitter"
+				miningEmitterAlt = "Strike WoodLight Emitter"
+
+				Equipment Slots
+				{
+					Tool
+				}
+				DamageStates
+				{
+					Used
+					{
+						#damageEmitter not working
+						damageEmitter = "Strike Rock Grey Emitter"
+						damageEmitter = "Hit WoodLight Emitter"
+						
+						durabilityThreshold = 120.0
+						
+						Diffuse
+						{
+							"box" = "Character/Tools/0axe_ALV_Used_diff.tga"
+						}
+						Normal
+						{
+							"box" = "Character/Tools/0axe_Used_norm.tga"
+						}
+						
+						model = "Models/PlaceableObjects/Testing/beach_bucket.obj"
+					}
+					Poor
+					{
+						#damageEmitter not working
+						damageEmitter = "Hit Rock Grey Emitter"
+						damageEmitter = "Hit WoodLight Emitter"
+						
+						durabilityThreshold = 48.0
+						
+						Diffuse
+						{
+							"box" = "Character/Tools/0axe_ALV_Used_diff.tga"
+						}
+						Normal
+						{
+							"box" = "Character/Tools/0axe_Used_norm.tga"
+						}
+						
+						model = "Models/PlaceableObjects/Testing/beach_bucket.obj"
+					}
+
+				}
+			}
+		}
+	}
+}

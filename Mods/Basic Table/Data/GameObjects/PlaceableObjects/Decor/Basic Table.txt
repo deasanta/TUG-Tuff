@@ -1,0 +1,89 @@
+
+GameObjects
+{
+	PlaceableObject
+	{
+		Basic Table
+		{
+			Tag = "Decor"
+			
+			Transform
+			{
+			}
+			Script
+			{
+				file = "Scripts/Objects/PlaceableObject.lua"
+				class = "PlaceableObject"
+				
+				arguments
+				{
+					encumbrance = 1
+
+					dataMetricCategory = "Decor"
+					UBPcraft = 4
+					LBPcraft = 4
+					XPcraft = 8
+				}
+			}
+			StaticGraphics
+			{
+				model = "Models/PlaceableObjects/Refined/basic_table.obj"
+				Diffuse
+				{
+					0 = "Models/PlaceableObjects/Refined/bamboo_stool_diff.tga"
+				}
+				Normal
+				{
+					0 = "Models/PlaceableObjects/Refined/bamboo_stool_norm.tga"
+				}
+			}
+			#RigidBody
+			#{
+			#	activePhysics = 0
+			#	mass = 50.0
+			#	friction = 100.0
+			#}
+			Physics
+			{
+				Colliders
+				{
+					Mesh
+					{
+						mass = 50.0
+						material = "WOOD"
+					}
+					#Cylinder
+					#{
+					#	mass = 50.0
+					#	height = 1.6
+					#	radius = 0.8
+					#	center = <0.0, 0.68, 0>
+					#}
+				}
+
+				Rigidbody
+				{
+					keyframed = 1
+				}
+			}
+			Placeable
+			{
+				name = "Basic Table"
+				icon = "basictable"
+				minScale = 1.0
+				maxScale = 1.0
+				
+				category = "Decor"
+				tier = 2
+				resource = 1
+				maxStackCount = 1
+				placeWithNoPhysics = 1
+				
+				survivalFaceCamera = 1
+				survivalRotOffset = [0.0, 1.0, 0.0, -90.0]
+				
+				placementSound = "WoodPlace"
+			}
+		}
+	}
+}

@@ -1,0 +1,20 @@
+Manifest
+{
+	# Name of the mods.
+	Name = "Beach Umbrella"
+
+	# Description of the mod.
+	Description = "A basic mod by deasanta"
+
+	# The major version number.
+	MajorVersion = 0.1
+
+	# The minor version number.
+	MinorVersion = 0.1
+
+	# The file path to the script that is the entry point.
+	ScriptFile = "Scripts/Beach Umbrella.lua"
+
+	# The script entry point class name
+	#ScriptClass = "BeachUmbrella"
+}
